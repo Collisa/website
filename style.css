@@ -1,0 +1,410 @@
+/* general styling */
+
+* {
+    /* margin: 0; */
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: black;
+    color: whitesmoke;
+    font-size: 18px;
+    margin: 0;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Baloo Tamma 2', cursive;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
+/* scrollbar styling */
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: black; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #ee0445;
+    border-radius: 25px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: whitesmoke; 
+  }
+
+
+
+/* header styling */
+
+.title-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 3rem 0 3rem;
+}
+
+.logo {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+img.lisa-logo {
+    width: auto;
+    height: 5rem;
+}
+
+img.web-dev-logo {
+    width: auto;
+    height: 9rem;
+    position: relative;
+    right: 10rem;
+}
+
+.menu-sentence {
+    font-family: '';
+    width: 50%;
+    text-align: right;
+}
+
+.menu {
+    display: none;
+    font-size: 1rem;
+    background-color: black;
+    border: none;
+    color: whitesmoke;
+    font-weight: bold;
+    border-radius: 25%;
+    padding: 0.5rem;
+    margin-right: 0.75rem;
+    border: 2px solid black;
+    transition: all 750ms;
+    float: right;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0.5rem;
+    z-index: 2;
+}
+
+.menu:hover {
+    color: #EE0445;
+    border: 2px solid #EE0445;
+    
+}
+
+.menu a {
+    font-family: 'Baloo Tamma 2', cursive;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1052px) {
+    .logo {
+        width: 100%;
+    }
+    img.web-dev-logo {
+        height: 5rem;
+    }
+    img.lisa-logo {
+        height: 3rem;
+    }
+}
+
+@media screen and (max-width: 745px) {
+    .sentence {
+        display: none;
+    }
+    .menu {
+        display: inline;
+    }
+    img.web-dev-logo {
+        right: 4rem;
+    }
+}
+
+@media screen and (max-width: 485px) {
+    img.web-dev-logo {
+        left: 0;
+    }
+    img.lisa-logo {
+        display: none;
+    }
+}
+
+/* navbar styling */
+
+nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: black;
+    z-index: 1;
+    padding: 0.05rem 0 0 0;
+}
+
+nav a {
+    font-family: 'Baloo Tamma 2', cursive;
+    color: whitesmoke;
+    text-decoration: none;
+    transition-property: color;
+    transition-duration: 750ms;
+}
+
+nav a:hover {
+    color: #EE0445;
+}
+
+#left {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.horizontal-container {
+    margin: 1.5rem 3rem 0 3rem;
+    display: flex;
+    height: 1rem;
+}
+
+
+#right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#right a {
+    align-self: flex-end;
+    background-color: black;
+    z-index: 1;
+    padding: 2rem 1rem;
+    border-radius: 50%;
+    position: relative;
+    top: 4.5rem;
+    border: 2px solid #EE0445;
+    transition-property: background-color;
+    transition-duration: 750ms;
+}
+
+#right a:hover {
+    background-color: #EE0445;
+    color: whitesmoke;
+}
+
+hr {
+    position: relative;
+    width: 100%;
+    margin: 1.25rem 0;
+}
+
+.vertical-container {
+    display: none;
+}
+
+
+@media screen and (max-width: 745px) {
+    nav {
+        background-color: transparent;
+        position: static;
+    }
+    .menu {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+    }
+    .horizontal-container {
+        display: none;
+    }
+    hr {
+        bottom: 0;
+    }
+    .vertical-container {
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding: 2.5rem 3rem 0 3rem;
+        transform: translateX(100vw);
+        transition-property: transform;
+        transition-duration: 1.25s;
+        background-color: hsla(0, 0%, 0%, 0.85);
+        z-index: 1;
+    }
+    button.x{
+        margin-bottom: 3rem;
+    }
+    .vertical-container a {
+        margin: 0.75rem 0;
+    }
+    .contact {
+        align-self: center;
+        background-color: black;
+        padding: 2rem 1rem;
+        border-radius: 50%;
+        border: 2px solid #EE0445;
+        transition-property: background-color;
+        transition-duration: 750ms;
+    }
+    .contact:hover {
+        background-color: #EE0445;
+        color: whitesmoke;
+    }
+    .vertical-container.show {
+        transform: translateX(0);
+    }
+    .delete {
+        display: none;
+    }
+}
+
+
+
+/* styling main */
+
+/* styling 1st section */
+
+section {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.overlay1 {
+    background-color: #EE0445;
+    display: inline-block;
+    box-sizing: content-box;
+    line-height: 0;
+    align-self: flex-end;
+    flex-basis: 34rem;
+    flex-shrink: 1;
+    margin: 0 1rem;
+}
+
+img.section1 {
+    height: auto;
+    width: 100%;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+
+img.new {
+    height: auto;
+    width: 30rem;
+    flex-basis: 30rem;
+    flex-shrink: 1;
+    margin: 0 1rem;
+}
+
+@media screen and (max-width: 485px) {
+    section {
+        position: relative;
+        top: 0;
+        flex-direction: column;
+        width: 100vw;
+        align-items: center;
+    }
+    .overlay1 {
+        width: 100vw;
+        flex-basis: content;
+        margin: 0;
+    }
+    img.new {
+        width: 80%;
+        height: auto;
+        margin: 0;
+    }
+}
+
+    
+
+/* styling bannersection */
+
+.banner {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10rem 0 5rem 0;
+}
+
+.banner img {
+    height: auto;
+    width: 15rem;
+    flex: 1;
+    filter: grayscale(100%);
+}
+
+@media screen and (max-width: 745px) {
+    .banner {
+        margin: 4rem 0;
+    }
+}
+
+@media screen and (max-width: 485px) {
+    .banner {
+        flex-direction: row;
+        width: 100vw;
+        flex-wrap: wrap;
+        margin: 0;
+    }
+    .banner img {
+        width: 12rem;
+        height: auto;
+        flex: none;
+        flex-grow: 1;
+    }
+}
+
+
+
+/* section explanation */
+
+.explanation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 60rem;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+}
+
+.explanation p {
+    text-align: center;
+}
+
+
+
+/* footer styling */
+
+footer {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+footer img {
+    width: 5rem;
+    height: auto;
+    margin: 0 3rem 0 3rem;
+}
