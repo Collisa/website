@@ -254,6 +254,7 @@ hr {
     }
     button.x{
         margin-bottom: 3rem;
+        position: relative;
     }
     .vertical-container a {
         margin: 0.75rem 0;
